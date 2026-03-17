@@ -6,15 +6,15 @@
   <title>Fale Conosco</title>
 
   <!-- ============================================================
-    👉 SUBSTITUA GTM-MPG2WL99 pelo seu ID do Google Tag Manager
+    👉 SUBSTITUA GTM-XXXXXXX pelo seu ID do Google Tag Manager
   ============================================================ -->
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MPG2WL99');</script>
-<!-- End Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+  <!-- End Google Tag Manager -->
 
   <!-- Brevo styles -->
   <style>
@@ -53,13 +53,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap');
 
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
     body {
       background: var(--bg);
       font-family: 'DM Sans', sans-serif;
       color: var(--text);
-      min-height: 100vh;
       display: flex;
-      align-items: center;
       justify-content: center;
       padding: 2rem 1rem;
     }
@@ -144,10 +148,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 <body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPG2WL99"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <div class="page-wrapper">
 
@@ -263,7 +267,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <!-- BOTÃO -->
               <div style="padding:8px 0;">
                 <div class="sib-form-block" style="text-align:left">
-                  <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-size:16px;text-align:left;font-weight:700;font-family:Helvetica,sans-serif;color:#FFFFFF;background-color:#76795b;border-radius:3px;border-width:0px;" form="sib-form" type="submit">
+                  <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-size:16px;text-align:left;font-weight:700;font-family:Helvetica,sans-serif;color:#FFFFFF;background-color:#76795b;border-radius:3px;border-width:0px;" type="submit">
                     <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512">
                       <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"/>
                     </svg>
@@ -299,7 +303,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     };
     var AUTOHIDE = Boolean(0);
   </script>
-  <script src="https://sibforms.com/forms/end-form/build/main.js"></script>
+  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 
   <!-- ============================================================
     🎯 RASTREAMENTO DE CONVERSÃO
@@ -332,6 +336,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       observer.observe(successBox, { attributes: true, attributeFilter: ['style'] });
     })();
+  </script>
+
+  <!-- Script que envia altura real da página para o iframe pai (Google Sites) -->
+  <script>
+    function sendHeight() {
+      var h = document.body.scrollHeight;
+      window.parent.postMessage({ frameHeight: h }, '*');
+    }
+    window.addEventListener('load', sendHeight);
+    window.addEventListener('resize', sendHeight);
+    // Observa mudanças no DOM (ex: mensagem de sucesso aparecendo)
+    var resizeObserver = new ResizeObserver(sendHeight);
+    resizeObserver.observe(document.body);
   </script>
 
 </body>
