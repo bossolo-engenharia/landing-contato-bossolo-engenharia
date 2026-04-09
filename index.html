@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Regularize seu Imóvel – Bossolo Engenharia</title>
+  <title>Bossolo Engenharia – Construção, Regularização e Financiamento</title>
+  <link rel="icon" type="image/png" href="logotipo.png"/>
 
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -11,24 +12,16 @@
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-MPG2WL99');</script>
-  <!-- End Google Tag Manager -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
-
-  <style>
-    #sib-container input:-ms-input-placeholder { font-family: 'Jost', sans-serif; color: #b0b8c1; }
-    #sib-container input::placeholder          { font-family: 'Jost', sans-serif; color: #b0b8c1; }
-    #sib-container a { color: #c87941; }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
       --gold: #c87941;
+      --gold-light: #e8a96a;
       --dark: #1c1a17;
       --text: #3a3128;
       --muted: #7a6f63;
@@ -37,422 +30,385 @@
       --border: #e8e2da;
       --green: #25d366;
     }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); font-family: 'Jost', sans-serif; color: var(--text); line-height: 1.6; }
 
-    body {
-      background: var(--bg);
-      font-family: 'Jost', sans-serif;
-      color: var(--text);
-      line-height: 1.6;
+    /* NAV */
+    nav {
+      background: var(--dark);
+      padding: 0 32px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: sticky; top: 0; z-index: 200;
+      height: 68px;
+      border-bottom: 1px solid rgba(200,121,65,0.15);
     }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo img { height: 38px; width: auto; }
+    .nav-logo-text { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; color: #f5f0eb; line-height: 1.1; }
+    .nav-logo-text span { color: var(--gold-light); font-style: italic; }
+    .nav-logo-sub { font-size: 0.6rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); display: block; }
+    .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+    .nav-links a { color: #c8bfb5; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; padding: 8px 14px; border-radius: 3px; transition: color 0.2s, background 0.2s; white-space: nowrap; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold-light); background: rgba(200,121,65,0.08); }
+    .nav-cta { background: var(--gold) !important; color: #fff !important; font-weight: 600 !important; padding: 10px 22px !important; border-radius: 4px !important; transition: background 0.2s !important; }
+    .nav-cta:hover { background: #a8622e !important; }
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+    .nav-hamburger span { display: block; width: 24px; height: 2px; background: #c8bfb5; border-radius: 2px; }
+    .nav-mobile { display: none; position: fixed; inset: 68px 0 0 0; background: var(--dark); z-index: 199; flex-direction: column; padding: 24px; gap: 0; border-top: 1px solid rgba(200,121,65,0.15); overflow-y: auto; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { color: #c8bfb5; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 16px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .nav-mobile a.active, .nav-mobile a:hover { color: var(--gold-light); }
+    .nav-mobile .nav-cta { margin-top: 16px; text-align: center; background: var(--gold); border-radius: 4px; border-bottom: none; color: #fff !important; }
+
+    @media (max-width: 900px) { .nav-links { display: none; } .nav-hamburger { display: flex; } }
 
     /* HERO */
-    .hero {
-      background: var(--dark);
-      padding: 52px 24px 48px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(200,121,65,0.15) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-badge {
-      display: inline-block;
-      background: rgba(200,121,65,0.15);
-      border: 1px solid rgba(200,121,65,0.4);
-      color: #e8a96a;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      padding: 6px 16px;
-      border-radius: 20px;
-      margin-bottom: 20px;
-    }
-    .hero-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 6vw, 3.4rem);
-      font-weight: 700;
-      color: #f5f0eb;
-      line-height: 1.15;
-      margin-bottom: 16px;
-    }
-    .hero-title em { font-style: italic; color: #e8a96a; }
-    .hero-subtitle {
-      font-size: 1rem;
-      font-weight: 300;
-      color: #a09890;
-      max-width: 480px;
-      margin: 0 auto 32px;
-      line-height: 1.7;
-    }
-    .quick-benefits {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-    .quick-benefit {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      color: #c8bfb5;
-      font-size: 0.82rem;
-    }
-    .quick-benefit::before { content: '✓'; color: var(--gold); font-weight: 700; }
+    .hero { position: relative; overflow: hidden; min-height: 92vh; display: flex; align-items: center; background: var(--dark); }
+    .hero-bg { position: absolute; inset: 0; background: url('Fachada_01.jpeg') center/cover no-repeat; filter: brightness(0.22) saturate(0.6); transform: scale(1.04); transition: transform 8s ease; }
+    .hero:hover .hero-bg { transform: scale(1.0); }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(28,26,23,0.95) 0%, rgba(28,26,23,0.55) 55%, transparent 100%); }
+    .hero-glow { position: absolute; inset: 0; background: radial-gradient(ellipse at 20% 50%, rgba(200,121,65,0.13) 0%, transparent 60%); }
+    .hero-content { position: relative; z-index: 1; max-width: 1100px; margin: 0 auto; padding: 80px 48px; width: 100%; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(200,121,65,0.45); color: var(--gold-light); font-size: 10px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; padding: 7px 18px; border-radius: 20px; margin-bottom: 28px; background: rgba(200,121,65,0.06); }
+    .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--gold-light); border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 6vw, 5.2rem); font-weight: 700; color: #f5f0eb; line-height: 1.06; margin-bottom: 24px; max-width: 680px; }
+    .hero h1 em { font-style: italic; color: var(--gold-light); }
+    .hero-sub { font-size: 1.05rem; font-weight: 300; color: #a09890; max-width: 460px; line-height: 1.75; margin-bottom: 40px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 10px; background: var(--gold); color: #fff; font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; padding: 17px 36px; border-radius: 4px; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 24px rgba(200,121,65,0.35); }
+    .btn-primary:hover { background: #a8622e; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(200,121,65,0.45); }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 10px; background: transparent; color: #c8bfb5; font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 400; letter-spacing: 0.1em; text-decoration: none; padding: 17px 28px; border: 1px solid rgba(200,191,181,0.3); border-radius: 4px; transition: border-color 0.2s, color 0.2s; }
+    .btn-ghost:hover { border-color: var(--gold-light); color: var(--gold-light); }
+    .hero-stats { display: flex; gap: 48px; flex-wrap: wrap; margin-top: 64px; padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .hero-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 700; color: var(--gold-light); line-height: 1; }
+    .hero-stat-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #6a605a; margin-top: 6px; }
 
-    /* MAIN */
-    .main {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 48px 24px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: start;
-    }
+    /* SERVICES */
+    .section { max-width: 1100px; margin: 0 auto; padding: 88px 48px; }
+    .section-label { font-size: 10px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; display: block; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; color: var(--dark); line-height: 1.15; margin-bottom: 16px; }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .section-intro { font-size: 0.95rem; font-weight: 300; color: var(--muted); max-width: 560px; line-height: 1.75; margin-bottom: 56px; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--border); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .service-card { background: var(--white); padding: 40px 36px; text-decoration: none; color: inherit; transition: background 0.2s, transform 0.2s; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+    .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+    .service-card:hover { background: #fdf8f4; }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-icon { width: 48px; height: 48px; border-radius: 10px; background: rgba(200,121,65,0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; font-size: 1.4rem; }
+    .service-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--dark); margin-bottom: 10px; line-height: 1.2; }
+    .service-desc { font-size: 0.88rem; font-weight: 300; color: var(--muted); line-height: 1.65; flex: 1; margin-bottom: 20px; }
+    .service-link { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 8px; transition: gap 0.2s; }
+    .service-card:hover .service-link { gap: 12px; }
 
-    /* LEFT */
-    .section-label {
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 12px;
-      display: block;
-    }
-    .info-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      font-weight: 700;
-      color: var(--dark);
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
-    .info-text {
-      font-size: 0.95rem;
-      font-weight: 300;
-      color: var(--muted);
-      line-height: 1.75;
-      margin-bottom: 28px;
-    }
-    .problems { list-style: none; margin-bottom: 32px; }
-    .problems li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 10px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.9rem;
-    }
-    .problems li:last-child { border-bottom: none; }
-    .problems li .icon {
-      width: 22px; height: 22px;
-      background: rgba(200,121,65,0.1);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      font-size: 0.7rem;
-      color: var(--gold);
-      font-weight: 700;
-      margin-top: 1px;
-    }
+    /* GALLERY */
+    .gallery-section { background: var(--dark); padding: 88px 0; position: relative; overflow: hidden; }
+    .gallery-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 50%, rgba(200,121,65,0.07) 0%, transparent 60%); }
+    .gallery-inner { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+    .gallery-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; grid-template-rows: 280px 280px; gap: 4px; border-radius: 12px; overflow: hidden; margin-top: 48px; }
+    .gallery-item { position: relative; overflow: hidden; background: #2a2520; }
+    .gallery-item:first-child { grid-row: span 2; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease, filter 0.4s ease; filter: brightness(0.85) saturate(0.9); }
+    .gallery-item:hover img { transform: scale(1.06); filter: brightness(1) saturate(1.1); }
+    .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(28,26,23,0.85)); padding: 24px 18px 14px; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(245,240,235,0.8); opacity: 0; transition: opacity 0.3s; }
+    .gallery-item:hover .gallery-caption { opacity: 1; }
 
-    /* WHATSAPP */
-    .whatsapp-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: var(--green);
-      color: #fff;
-      font-family: 'Jost', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 600;
-      text-decoration: none;
-      padding: 16px 28px;
-      border-radius: 8px;
-      transition: background 0.2s, transform 0.2s;
-      margin-bottom: 12px;
-    }
-    .whatsapp-btn:hover { background: #1fb855; transform: translateY(-2px); }
-    .whatsapp-btn svg { width: 22px; height: 22px; fill: #fff; flex-shrink: 0; }
-    .whatsapp-note { text-align: center; font-size: 0.75rem; color: var(--muted); font-weight: 300; }
-    .or-divider {
-      display: flex; align-items: center; gap: 12px;
-      margin: 20px 0;
-      color: var(--muted); font-size: 0.8rem; font-weight: 500;
-      letter-spacing: 0.1em; text-transform: uppercase;
-    }
-    .or-divider::before, .or-divider::after {
-      content: ''; flex: 1; height: 1px; background: var(--border);
-    }
+    /* WHY */
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .why-visual { position: relative; }
+    .why-img-main { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 10px; filter: brightness(0.95); }
+    .why-img-accent { position: absolute; bottom: -24px; right: -24px; width: 45%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; border: 4px solid var(--bg); box-shadow: 0 12px 40px rgba(0,0,0,0.15); }
+    .why-badge-float { position: absolute; top: -18px; left: -18px; background: var(--dark); color: #f5f0eb; padding: 16px 20px; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.2); text-align: center; z-index: 1; }
+    .why-badge-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--gold-light); line-height: 1; }
+    .why-badge-txt { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+    .why-points { list-style: none; margin: 28px 0; }
+    .why-points li { display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--border); }
+    .why-points li:last-child { border-bottom: none; }
+    .why-check { width: 22px; height: 22px; flex-shrink: 0; background: rgba(200,121,65,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 0.65rem; font-weight: 800; margin-top: 2px; }
+    .why-point-title { font-size: 0.92rem; font-weight: 600; color: var(--dark); margin-bottom: 3px; }
+    .why-point-desc { font-size: 0.83rem; font-weight: 300; color: var(--muted); line-height: 1.55; }
 
-    /* FORM */
-    .form-card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 32px 28px;
-      box-shadow: 0 4px 32px rgba(0,0,0,0.06);
-    }
-    .form-card-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 6px;
-    }
-    .form-card-subtitle {
-      font-size: 0.85rem;
-      color: var(--muted);
-      font-weight: 300;
-      margin-bottom: 24px;
-      line-height: 1.5;
-    }
+    /* PROCESS */
+    .process-section { background: #f5f3f0; padding: 88px 0; }
+    .process-inner { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 48px; position: relative; }
+    .steps::before { content: ''; position: absolute; top: 28px; left: 10%; right: 10%; height: 1px; background: var(--border); }
+    .step { text-align: center; padding: 0 20px; }
+    .step-num { width: 56px; height: 56px; margin: 0 auto 20px; background: var(--white); border: 2px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 700; color: var(--dark); position: relative; z-index: 1; transition: border-color 0.3s, background 0.3s; }
+    .step:hover .step-num { border-color: var(--gold); background: rgba(200,121,65,0.06); }
+    .step-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .step-desc { font-size: 0.83rem; font-weight: 300; color: var(--muted); line-height: 1.6; }
 
-    /* Brevo overrides */
-    .sib-form { background: transparent !important; }
-    #sib-form-container { max-width: 100% !important; }
-    #sib-container {
-      background: transparent !important;
-      border: none !important;
-      box-shadow: none !important;
-      max-width: 100% !important;
-      padding: 0 !important;
-      border-radius: 0 !important;
-    }
-    #success-message, #error-message { max-width: 100% !important; margin-bottom: 12px; }
-    .sib-form-block__button {
-      width: 100% !important;
-      padding: 15px 24px !important;
-      font-size: 14px !important;
-      letter-spacing: 0.08em !important;
-      font-family: 'Jost', sans-serif !important;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-    .sib-form-block__button:hover { opacity: 0.85; }
+    /* CTA STRIP */
+    .cta-strip { background: var(--dark); padding: 80px 48px; text-align: center; position: relative; overflow: hidden; }
+    .cta-strip::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(200,121,65,0.18) 0%, transparent 70%); }
+    .cta-strip-content { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
+    .cta-strip h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; color: #f5f0eb; line-height: 1.15; margin-bottom: 16px; }
+    .cta-strip h2 em { font-style: italic; color: var(--gold-light); }
+    .cta-strip p { font-size: 0.95rem; font-weight: 300; color: #a09890; line-height: 1.7; margin-bottom: 36px; }
+    .cta-strip-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-whatsapp { display: inline-flex; align-items: center; gap: 10px; background: var(--green); color: #fff; font-family: 'Jost', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; padding: 17px 32px; border-radius: 4px; transition: background 0.2s, transform 0.2s; }
+    .btn-whatsapp:hover { background: #1fba57; transform: translateY(-2px); }
 
     /* FOOTER */
-    .footer {
-      text-align: center;
-      padding: 24px;
-      font-size: 0.75rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-    }
+    footer { background: #141210; padding: 40px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: #f5f0eb; }
+    .footer-logo span { color: var(--gold-light); font-style: italic; }
+    .footer-text { font-size: 0.78rem; font-weight: 300; color: #5a5248; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: #5a5248; text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold-light); }
 
-    /* MOBILE */
-    @media (max-width: 700px) {
-      .main { grid-template-columns: 1fr; gap: 32px; padding: 32px 20px; }
-      .form-card { padding: 24px 20px; }
-      .hero { padding: 40px 20px 36px; }
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gallery-item { height: 240px; }
+      .gallery-item:first-child { grid-row: span 1; height: 240px; }
+      .why-grid { grid-template-columns: 1fr; gap: 48px; }
+      .why-img-accent { display: none; }
+      .steps { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      .steps::before { display: none; }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 56px 24px; }
+      .hero-content { padding: 64px 24px; }
+      .hero-stats { gap: 32px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item, .gallery-item:first-child { height: 220px; }
+      .steps { grid-template-columns: 1fr; }
+      footer { flex-direction: column; align-items: flex-start; padding: 32px 24px; }
+      .gallery-inner, .process-inner { padding-left: 24px; padding-right: 24px; }
+      .cta-strip { padding: 64px 24px; }
     }
   </style>
 </head>
 <body>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPG2WL99"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPG2WL99" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="logotipo.png" alt="Bossolo Engenharia">
+    <div>
+      <div class="nav-logo-text">Bossolo <span>Engenharia</span></div>
+      <span class="nav-logo-sub">São José do Rio Preto</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Início</a></li>
+    <li><a href="construcao.html">Construção</a></li>
+    <li><a href="regularizacao.html">Regularização</a></li>
+    <li><a href="financiamento.html">Financiamento</a></li>
+    <li><a href="projetos-bossolo.html">Projetos</a></li>
+    <li><a href="contato.html" class="nav-cta">Solicitar Orçamento</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html" class="active">Início</a>
+  <a href="construcao.html">Construção</a>
+  <a href="regularizacao.html">Regularização</a>
+  <a href="financiamento.html">Financiamento</a>
+  <a href="projetos-bossolo.html">Projetos</a>
+  <a href="contato.html" class="nav-cta">Solicitar Orçamento</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-badge">Bossolo Engenharia</div>
-  <h1 class="hero-title">Seu imóvel irregular<br>pode ser <em>resolvido</em></h1>
-  <p class="hero-subtitle">Regularizamos casas, construções e terrenos em São José do Rio Preto e região. Atendimento rápido e sem burocracia.</p>
-  <div class="quick-benefits">
-    <span class="quick-benefit">Averbação de construção</span>
-    <span class="quick-benefit">Regularização na prefeitura</span>
-    <span class="quick-benefit">Habite-se</span>
-    <span class="quick-benefit">Documentação completa</span>
-  </div>
-</section>
-
-<!-- MAIN -->
-<div class="main">
-
-  <!-- LEFT -->
-  <div class="info-col">
-    <span class="section-label">Como podemos ajudar</span>
-    <h2 class="info-title">Resolvemos a situação do seu imóvel do início ao fim</h2>
-    <p class="info-text">Se sua casa foi construída sem projeto, sem alvará ou está sem documentação no cartório, a Bossolo Engenharia cuida de todo o processo para você regularizar com tranquilidade.</p>
-
-    <ul class="problems">
-      <li><span class="icon">✓</span> Casa construída sem planta ou projeto</li>
-      <li><span class="icon">✓</span> Imóvel sem escritura ou registro no cartório</li>
-      <li><span class="icon">✓</span> Construção sem alvará ou habite-se</li>
-      <li><span class="icon">✓</span> Imóvel irregular que você quer vender</li>
-      <li><span class="icon">✓</span> Averbação de construção na matrícula</li>
-    </ul>
-
-    <a class="whatsapp-btn" href="https://wa.me/5517997221260?text=Ol%C3%A1%2C%20vi%20seu%20an%C3%BAncio%20no%20Google%20Ads%20e%20gostaria%20de%20regularizar%20meu%20im%C3%B3vel" target="_blank" onclick="window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'whatsapp_click'});">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-      </svg>
-      Falar pelo WhatsApp agora
-    </a>
-    <p class="whatsapp-note">Respondemos em minutos durante o horário comercial</p>
-    <div class="or-divider">ou preencha o formulário</div>
-  </div>
-
-  <!-- RIGHT: FORM -->
-  <div class="form-col">
-    <div class="form-card">
-      <h3 class="form-card-title">Solicite uma avaliação</h3>
-      <p class="form-card-subtitle">Preencha seus dados e entraremos em contato para entender sua situação.</p>
-
-      <div class="sib-form">
-        <div id="sib-form-container" class="sib-form-container">
-
-          <div id="error-message" class="sib-form-message-panel" style="font-size:14px;text-align:left;font-family:'Jost',sans-serif;color:#661d1d;background-color:#ffeded;border-radius:8px;border-color:#ff4949;max-width:100%;">
-            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-              <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon"><path d="M256 40c118.621 0 216 96.075 216 216 0 119.291-96.61 216-216 216-119.244 0-216-96.562-216-216 0-119.203 96.602-216 216-216m0-32C119.043 8 8 119.083 8 256c0 136.997 111.043 248 248 248s248-111.003 248-248C504 119.083 392.957 8 256 8zm-11.49 120h22.979c6.823 0 12.274 5.682 11.99 12.5l-7 168c-.268 6.428-5.556 11.5-11.99 11.5h-8.979c-6.433 0-11.722-5.073-11.99-11.5l-7-168c-.283-6.818 5.167-12.5 11.99-12.5zM256 340c-15.464 0-28 12.536-28 28s12.536 28 28 28 28-12.536 28-28-12.536-28-28-28z"/></svg>
-              <span class="sib-form-message-panel__inner-text">Erro. Tente novamente.</span>
-            </div>
-          </div>
-
-          <div id="success-message" class="sib-form-message-panel" style="font-size:14px;text-align:left;font-family:'Jost',sans-serif;color:#085229;background-color:#e7faf0;border-radius:8px;border-color:#13ce66;max-width:100%;">
-            <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-              <svg viewBox="0 0 512 512" class="sib-icon sib-notification__icon"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 464c-118.664 0-216-96.055-216-216 0-118.663 96.055-216 216-216 118.664 0 216 96.055 216 216 0 118.663-96.055 216-216 216zm141.63-274.961L217.15 376.071c-4.705 4.667-12.303 4.637-16.97-.068l-85.878-86.572c-4.667-4.705-4.637-12.303.068-16.97l8.52-8.451c4.705-4.667 12.303-4.637 16.97.068l68.976 69.533 163.441-162.13c4.705-4.667 12.303-4.637 16.97.068l8.451 8.52c4.668 4.705 4.637 12.303-.068 16.97z"/></svg>
-              <span class="sib-form-message-panel__inner-text">Recebemos! Entraremos em contato em breve.</span>
-            </div>
-          </div>
-
-          <div id="sib-container" class="sib-container--large sib-container--vertical" style="direction:ltr">
-            <form id="sib-form" method="POST" action="https://a0dd8cbd.sibforms.com/serve/MUIFAGtrZPVvhJhwqx0y1Ehf-0Kjs-GScSJxoadTo3JPIo0EubBzk7ro47TpRS9SfTCm8P492JZ7EMnkMvO3UW91KVa4wAv1x5DYtBahpTQkeofMGfQv-6aPHFRGVq2kDcLHO93cwAqkVRiBeZYrYFFnoBlMGLNcq3PQu1QGmAh-6VLU97voZpMYIUE_D6KnKzLaA7Ppz-uE-V93vQ==" data-type="subscription">
-
-              <div style="padding:6px 0;">
-                <div class="sib-input sib-form-block">
-                  <div class="form__entry entry_block">
-                    <div class="form__label-row">
-                      <label class="entry__label" style="font-weight:600;font-size:13px;font-family:'Jost',sans-serif;color:#3a3128;" for="NOME">Seu nome</label>
-                      <div class="entry__field">
-                        <input class="input" maxlength="200" type="text" id="NOME" name="NOME" autocomplete="off" placeholder="Como podemos te chamar?"/>
-                      </div>
-                    </div>
-                    <label class="entry__error entry__error--primary" style="font-size:13px;font-family:'Jost',sans-serif;color:#661d1d;background-color:#ffeded;border-radius:4px;border-color:#ff4949;"></label>
-                  </div>
-                </div>
-              </div>
-
-              <div style="padding:6px 0;">
-                <div class="sib-sms-field sib-form-block">
-                  <div class="form__entry entry_block">
-                    <div class="form__label-row">
-                      <label class="entry__label" style="font-weight:600;font-size:13px;font-family:'Jost',sans-serif;color:#3a3128;" for="SMS" data-required="*">WhatsApp</label>
-                      <div class="sib-sms-input-wrapper" style="direction:ltr">
-                        <div class="sib-sms-input" data-placeholder="Seu WhatsApp" data-required="1" data-country-code="BR" data-whatsapp-country-code="BR" data-value="" data-whatsappvalue="" data-attributename="SMS">
-                          <div class="entry__field">
-                            <select class="input" name="SMS__COUNTRY_CODE" data-required="true">
-                              <option value="+55" selected>+55 BR</option>
-                              <option value="+1">+1 US</option>
-                              <option value="+44">+44 GB</option>
-                              <option value="+351">+351 PT</option>
-                            </select>
-                          </div>
-                          <div class="entry__field" style="width:100%">
-                            <input type="tel" class="input" id="SMS" name="SMS" autocomplete="off" placeholder="(17) 99999-9999" data-required="true" required/>
-                          </div>
-                        </div>
-                        <div class="sib-sms-tooltip">
-                          <div class="sib-sms-tooltip__box">Inclua apenas os dígitos sem +/0</div>
-                          <span class="sib-sms-tooltip__icon">?</span>
-                        </div>
-                      </div>
-                    </div>
-                    <label class="entry__error entry__error--primary" style="font-size:13px;font-family:'Jost',sans-serif;color:#661d1d;background-color:#ffeded;border-radius:4px;border-color:#ff4949;"></label>
-                    <label class="entry__error entry__error--secondary" style="font-size:13px;font-family:'Jost',sans-serif;color:#661d1d;background-color:#ffeded;border-radius:4px;border-color:#ff4949;"></label>
-                  </div>
-                </div>
-              </div>
-
-              <div style="padding:6px 0;">
-                <div class="sib-input sib-form-block">
-                  <div class="form__entry entry_block">
-                    <div class="form__label-row">
-                      <label class="entry__label" style="font-weight:600;font-size:13px;font-family:'Jost',sans-serif;color:#3a3128;" for="EMAIL" data-required="*">E-mail</label>
-                      <div class="entry__field">
-                        <input class="input" type="text" id="EMAIL" name="EMAIL" autocomplete="off" placeholder="seu@email.com" data-required="true" required/>
-                      </div>
-                    </div>
-                    <label class="entry__error entry__error--primary" style="font-size:13px;font-family:'Jost',sans-serif;color:#661d1d;background-color:#ffeded;border-radius:4px;border-color:#ff4949;"></label>
-                  </div>
-                </div>
-              </div>
-
-              <div style="padding:10px 0 4px;">
-                <div class="sib-form-block">
-                  <button class="sib-form-block__button sib-form-block__button-with-loader" style="font-size:14px;font-weight:600;font-family:'Jost',sans-serif;color:#FFFFFF;background-color:#c87941;border-radius:8px;border-width:0px;letter-spacing:0.08em;text-transform:uppercase;" type="submit">
-                    <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512"><path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.652-5.386-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.75 8.461-16.728 5.01z"/></svg>
-                    Quero regularizar meu imóvel
-                  </button>
-                </div>
-              </div>
-
-              <input type="text" name="email_address_check" value="" class="input--hidden">
-              <input type="hidden" name="locale" value="pt">
-            </form>
-          </div>
-        </div>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Engenharia de confiança — CREA credenciado</div>
+    <h1>Construímos o lar<br>que você <em>merece</em></h1>
+    <p class="hero-sub">Da fundação à regularização no cartório — projetos residenciais com qualidade, transparência e financiamento facilitado pela Caixa.</p>
+    <div class="hero-actions">
+      <a href="contato.html" class="btn-primary">
+        Solicitar orçamento grátis
+      </a>
+      <a href="projetos-bossolo.html" class="btn-ghost">Ver projetos realizados →</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">+120</div>
+        <div class="hero-stat-label">Projetos entregues</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">7+</div>
+        <div class="hero-stat-label">Anos de experiência</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">Documentado CREA</div>
       </div>
     </div>
   </div>
+</section>
 
-</div>
+<!-- SERVICES -->
+<section class="section">
+  <span class="section-label">O que fazemos</span>
+  <h2 class="section-title">Soluções completas em <em>engenharia</em></h2>
+  <p class="section-intro">Da planta à chave, cuidamos de cada etapa com rigor técnico e atenção ao detalhe que a sua obra merece.</p>
+  <div class="services-grid">
+    <a href="construcao.html" class="service-card">
+      <div class="service-icon">🏗️</div>
+      <div class="service-title">Construção de Casas</div>
+      <p class="service-desc">Casas residenciais do zero com projeto personalizado, materiais de qualidade e execução rigorosa. Seu sonho construído com método e seriedade.</p>
+      <span class="service-link">Saiba mais →</span>
+    </a>
+    <a href="regularizacao.html" class="service-card">
+      <div class="service-icon">📋</div>
+      <div class="service-title">Regularização de Imóveis</div>
+      <p class="service-desc">Imóvel sem escritura ou habite-se? Regularizamos toda a documentação junto à prefeitura e cartório, com segurança jurídica total.</p>
+      <span class="service-link">Saiba mais →</span>
+    </a>
+    <a href="financiamento.html" class="service-card">
+      <div class="service-icon">🏦</div>
+      <div class="service-title">Financiamento pela Caixa</div>
+      <p class="service-desc">Somos credenciados e auxiliamos em todo o processo de financiamento habitacional pela Caixa Econômica Federal — mais simples do que você imagina.</p>
+      <span class="service-link">Saiba mais →</span>
+    </a>
+  </div>
+</section>
 
-<footer class="footer">
-  Bossolo Engenharia · São José do Rio Preto e região
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="gallery-inner">
+    <span class="section-label" style="color:#e8a96a;">Realizações recentes</span>
+    <h2 class="section-title" style="color:#f5f0eb;">Obras que <em>falam</em><br>por si mesmas</h2>
+    <p class="section-intro" style="color:#a09890;margin-bottom:0;">Cada detalhe é pensado para durar. Confira alguns dos nossos projetos entregues em São José do Rio Preto e região.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="Fachada_01.jpeg" alt="Fachada residencial Bossolo">
+        <div class="gallery-caption">Fachada residencial</div>
+      </div>
+      <div class="gallery-item">
+        <img src="Banheiro_01.jpeg" alt="Banheiro acabamento premium">
+        <div class="gallery-caption">Banheiro — acabamento premium</div>
+      </div>
+      <div class="gallery-item">
+        <img src="Cozinha_01.jpeg" alt="Cozinha integrada">
+        <div class="gallery-caption">Cozinha integrada</div>
+      </div>
+      <div class="gallery-item">
+        <img src="Sala_01.jpeg" alt="Sala de estar">
+        <div class="gallery-caption">Sala de estar</div>
+      </div>
+      <div class="gallery-item">
+        <img src="Banheiro_02.jpeg" alt="Banheiro suíte">
+        <div class="gallery-caption">Banheiro suíte</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="section">
+  <div class="why-grid">
+    <div class="why-visual">
+      <div class="why-badge-float">
+        <div class="why-badge-num">A+</div>
+        <div class="why-badge-txt">Qualidade</div>
+      </div>
+      <img src="Cozinha_02.jpeg" alt="Acabamento Bossolo" class="why-img-main">
+      <img src="Banheiro_01.jpeg" alt="Detalhe banheiro" class="why-img-accent">
+    </div>
+    <div>
+      <span class="section-label">Por que nos escolher</span>
+      <h2 class="section-title">Engenharia com <em>propósito</em><br>e responsabilidade</h2>
+      <p class="section-intro" style="margin-bottom:0;">Mais do que construir, nos comprometemos com o futuro de cada família que atendemos.</p>
+      <ul class="why-points">
+        <li>
+          <div class="why-check">✓</div>
+          <div><div class="why-point-title">Equipe própria e qualificada</div><div class="why-point-desc">Profissionais treinados e supervisionados diretamente pelos engenheiros responsáveis.</div></div>
+        </li>
+        <li>
+          <div class="why-check">✓</div>
+          <div><div class="why-point-title">Contratos transparentes</div><div class="why-point-desc">Tudo documentado: escopo, prazo, materiais e pagamentos. Sem surpresas.</div></div>
+        </li>
+        <li>
+          <div class="why-check">✓</div>
+          <div><div class="why-point-title">ART e documentação completa</div><div class="why-point-desc">Emitimos ART do CREA em todas as obras, com segurança jurídica ao proprietário.</div></div>
+        </li>
+        <li>
+          <div class="why-check">✓</div>
+          <div><div class="why-point-title">Acompanhamento pós-entrega</div><div class="why-point-desc">Suporte e garantia após a entrega das chaves para sua tranquilidade.</div></div>
+        </li>
+      </ul>
+      <a href="contato.html" class="btn-primary">Falar com um engenheiro</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="process-inner">
+    <span class="section-label">Como funciona</span>
+    <h2 class="section-title">Seu projeto em <em>4 etapas</em></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-title">Contato inicial</div>
+        <p class="step-desc">Você entra em contato e nos conta sobre o terreno e o que imagina construir.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-title">Visita e orçamento</div>
+        <p class="step-desc">Visitamos o local, levantamos as medidas e elaboramos um orçamento detalhado sem custo.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-title">Projeto e aprovação</div>
+        <p class="step-desc">Desenvolvemos o projeto arquitetônico e cuidamos da aprovação junto à prefeitura.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-title">Construção e entrega</div>
+        <p class="step-desc">Executamos com acompanhamento constante e entregamos com habite-se e documentação em dia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-strip">
+  <div class="cta-strip-content">
+    <h2>Pronto para tirar seu projeto <em>do papel?</em></h2>
+    <p>Entre em contato agora. Nossa equipe responde em minutos e agenda uma visita sem compromisso.</p>
+    <div class="cta-strip-actions">
+      <a href="https://wa.me/5517999999999" class="btn-whatsapp" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Falar no WhatsApp
+      </a>
+      <a href="contato.html" class="btn-primary">Preencher formulário →</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Bossolo <span>Engenharia</span></div>
+  <div class="footer-links">
+    <a href="index.html">Início</a>
+    <a href="construcao.html">Construção</a>
+    <a href="regularizacao.html">Regularização</a>
+    <a href="financiamento.html">Financiamento</a>
+    <a href="projetos-bossolo.html">Projetos</a>
+    <a href="contato.html">Contato</a>
+  </div>
+  <div class="footer-text">© 2025 Bossolo Engenharia · São José do Rio Preto e região</div>
 </footer>
 
 <script>
-  window.REQUIRED_CODE_ERROR_MESSAGE = 'Escolha um código de país';
-  window.LOCALE = 'pt';
-  window.EMAIL_INVALID_MESSAGE = window.SMS_INVALID_MESSAGE = "Informação inválida. Verifique e tente novamente.";
-  window.REQUIRED_ERROR_MESSAGE = "Este campo é obrigatório.";
-  window.GENERIC_INVALID_MESSAGE = "Informação inválida. Verifique e tente novamente.";
-  window.translation = {
-    common: {
-      selectedList: '{quantity} lista selecionada',
-      selectedLists: '{quantity} listas selecionadas',
-      selectedOption: '{quantity} selecionado',
-      selectedOptions: '{quantity} selecionados',
-    }
-  };
-  var AUTOHIDE = Boolean(0);
+  const hamburger = document.getElementById('hamburger');
+  const navMobile = document.getElementById('navMobile');
+  hamburger.addEventListener('click', () => navMobile.classList.toggle('open'));
 </script>
-<script src="https://sibforms.com/forms/end-form/build/main.js"></script>
-
-<script>
-  (function() {
-    window.dataLayer = window.dataLayer || [];
-    var fired = false;
-    window.addEventListener('load', function() {
-      var sibContainer = document.getElementById('sib-form-container');
-      if (!sibContainer) return;
-      var observer = new MutationObserver(function() {
-        if (fired) return;
-        var successMsg = document.getElementById('success-message');
-        if (!successMsg) return;
-        var isVisible = successMsg.offsetHeight > 0 &&
-                        window.getComputedStyle(successMsg).display !== 'none' &&
-                        window.getComputedStyle(successMsg).visibility !== 'hidden';
-        if (isVisible) {
-          fired = true;
-          observer.disconnect();
-          window.dataLayer.push({ event: 'brevo_form_submit', form_name: 'fale_conosco' });
-        }
-      });
-      observer.observe(sibContainer, { childList: true, subtree: true, attributes: true, attributeFilter: ['style', 'class'] });
-    });
-  })();
-</script>
-
 </body>
 </html>
