@@ -94,10 +94,27 @@
 
     /* GALERIA MASONRY */
     .gallery { columns: 3; gap: 8px; }
-    .gallery-item { break-inside: avoid; margin-bottom: 8px; border-radius: 6px; overflow: hidden; position: relative; }
-    .gallery-item img { width: 100%; display: block; transition: transform 0.5s; }
-    .gallery-item:hover img { transform: scale(1.04); }
-
+        .gallery-item {
+            flex: 0 0 auto;
+            width: 300px;
+            height: 220px;        /* ← mesma altura em todos */
+            scroll-snap-align: start;
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;         /* ← ocupa 100% do item pai */
+            object-fit: cover;    /* ← corta sem distorcer */
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.04);
+        }
     /* DIFERENCIAIS */
     .diff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2px; }
     .diff-item { background: var(--white); padding: 32px 24px; border: 1px solid var(--border); transition: box-shadow 0.3s; }
